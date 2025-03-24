@@ -39,8 +39,8 @@
   |----------|----------|--|--------------------------------------------------------------------------------------------------------------------------------|----------|------------|
   | 일정 생성    | `POST`   | localhost:8080/schedules | 요청 body <br/>{<br/>"id" : schedulesId <br/>"비밀번호" : PW <br/>"할 일" : "내용"<br/>"작성자명" : "작성자명" <br/>"작성/수정일" : YYYY-MM-DD <br/>} | 등록 정보    | 200 : 정상등록 |
   | 전체 일정 조회 | `GET`    | localhost:8080/schedules | 요청 param                                                                                                                       | 전체 일정 정보 | 200 : 정상조회 | 
-  | 선택 일정 조회 | `GET`    | localhost:8080/schedules/{schedulesId} | 요청 param                                                                                                                       | 선택 일정 정보 | 200 : 정상조회 |
-  | 선택 일정 수정 | `PUT`    | localhost:8080/schedules/{schedulesId} | 요청 body                                                                                                                        | 수정 정보    | 200 : 정상수정 |
- | 선택 일정 삭제 | `DELETE` | localhost:8080/schedules/{schedulesId} | 요청 param                                                                                                                       | -        | 200 : 정상삭제 |
+  | 선택 일정 조회 | `GET`    | localhost:8080/schedules/{Id} | 요청 param                                                                                                                       | 선택 일정 정보 | 200 : 정상조회 |
+  | 선택 일정 수정 | `PUT`    | localhost:8080/schedules/{Id} | 요청 body                                                                                                                        | 수정 정보    | 200 : 정상수정 |
+ | 선택 일정 삭제 | `DELETE` | localhost:8080/schedules/{Id} | 요청 param                                                                                                                       | -        | 200 : 정상삭제 |
 
 ## ERD
