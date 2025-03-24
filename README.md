@@ -44,3 +44,4 @@
  | 선택 일정 삭제 | `DELETE` | localhost:8080/schedules/{Id} | 요청 param                                                                                                                       | -        | 200 : 정상삭제 |
 
 ## ERD
+- ![schedule ERD](https://github.com/HanGil-Jeong/schedule/blob/main/schedule_ERD.png)
