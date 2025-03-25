@@ -70,7 +70,7 @@ public class ScheduleServiceImpl implements ScheduleService {
     }
 
     @Override
-    public void deleteSchedule(Long id, String password) {
+    public void deleteSchedule(Long id) {
 
         Schedule schedule = scheduleRepository.findScheduleById(id);
 
