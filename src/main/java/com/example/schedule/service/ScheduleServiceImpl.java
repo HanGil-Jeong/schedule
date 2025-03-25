@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
-public class ScheduleServiceImpl implements ScheduleService{
+public class ScheduleServiceImpl implements ScheduleService {
 
     private final ScheduleRepository scheduleRepository;
 
@@ -44,7 +44,7 @@ public class ScheduleServiceImpl implements ScheduleService{
 
         Schedule schedule = scheduleRepository.findScheduleById(id);
 
-        if(schedule == null){
+        if (schedule == null) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "존재하지 않는 id = " + id);
         }
 
@@ -56,16 +56,12 @@ public class ScheduleServiceImpl implements ScheduleService{
 
         Schedule schedule = scheduleRepository.findScheduleById(id);
 
-        if(password.equals(password)) {
-            if (schedule == null) {
-                throw new ResponseStatusException(HttpStatus.NOT_FOUND, "존재하지 않는 id = " + id);
-            }
+        if (schedule == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "존재하지 않는 id = " + id);
+        }
 
-            if (todo == null || writersName == null) {
-                throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "할 일과 작성자명을 적어주세요");
-            }
-        } else {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "비밀번호가 틀렸습니다.");
+        if (todo == null || writersName == null) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "할 일과 작성자명을 적어주세요");
         }
 
         schedule.update(todo, writersName, LocalDateTime.now());
@@ -78,14 +74,11 @@ public class ScheduleServiceImpl implements ScheduleService{
 
         Schedule schedule = scheduleRepository.findScheduleById(id);
 
-        if (schedule == null) {
 
-            if (schedule == null) {
-                throw new ResponseStatusException(HttpStatus.NOT_FOUND, "존재하지 않는 id = " + id);
-            }
-        } else {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "비밀번호가 틀렸습니다.");
+        if (schedule == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "존재하지 않는 id = " + id);
         }
+
 
     }
 
