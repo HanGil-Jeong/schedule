@@ -52,7 +52,7 @@ public class ScheduleServiceImpl implements ScheduleService {
     }
 
     @Override
-    public ScheduleResponseDto updateSchedule(Long id, String password, String todo, String writersName) {
+    public ScheduleResponseDto updateSchedule(Long id, String todo, String writersName) {
 
         Schedule schedule = scheduleRepository.findScheduleById(id);
 
