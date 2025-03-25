@@ -17,7 +17,6 @@
 
 
 ## ⚙️ 기술 스택
-- **Server** : 
 - **DataBase** : JDBC
 
 ## 📝 프로젝트 아키텍쳐
@@ -30,7 +29,7 @@
   - 전체 일정 조회
   - 선택 일정 조회 : scheduleId를 통해 원하는 일정 조회
 - 일정 수정
-  - 선택한 일정 수정 : 조회된 일정 정보를 비밀번호 입력 후 일치하면 수정 가능
+  - 선택한 일정 수정 : 조회된 일정 정보를 비밀번호 입력 후 일치하면 할 일과 작성자명만 수정 가능
 - 일정 삭제
   - 선택한 일정 삭제 : 조회된 일정 정보를 비밀번호 입력 후 일치하면 삭제
 
@@ -40,7 +39,7 @@
   | 일정 생성    | `POST`   | localhost:8080/schedules | 요청 body <br/>{<br/>"id" : schedulesId <br/>"비밀번호" : PW <br/>"할 일" : "내용"<br/>"작성자명" : "작성자명" <br/>"작성/수정일" : YYYY-MM-DD <br/>} | 등록 정보    | 200 : 정상등록 |
   | 전체 일정 조회 | `GET`    | localhost:8080/schedules | 요청 param                                                                                                                       | 전체 일정 정보 | 200 : 정상조회 | 
   | 선택 일정 조회 | `GET`    | localhost:8080/schedules/{Id} | 요청 param                                                                                                                       | 선택 일정 정보 | 200 : 정상조회 |
-  | 선택 일정 수정 | `PUT`    | localhost:8080/schedules/{Id} | 요청 body                                                                                                                        | 수정 정보    | 200 : 정상수정 |
+  | 선택 일정 수정 | `PATCH`  | localhost:8080/schedules/{Id} | 요청 body                                                                                                                        | 수정 정보    | 200 : 정상수정 |
  | 선택 일정 삭제 | `DELETE` | localhost:8080/schedules/{Id} | 요청 param                                                                                                                       | -        | 200 : 정상삭제 |
 
 ## ERD
