@@ -5,6 +5,7 @@ import com.example.schedule.dto.ScheduleResponseDto;
 import com.example.schedule.entity.Schedule;
 import com.example.schedule.repository.ScheduleRepository;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -49,4 +50,44 @@ public class ScheduleServiceImpl implements ScheduleService{
 
         return new ScheduleResponseDto(schedule);
     }
+
+    @Override
+    public ScheduleResponseDto updateSchedule(Long id, String password, String todo, String writersName) {
+
+        Schedule schedule = scheduleRepository.findScheduleById(id);
+
+        if(password.equals(password)) {
+            if (schedule == null) {
+                throw new ResponseStatusException(HttpStatus.NOT_FOUND, "존재하지 않는 id = " + id);
+            }
+
+            if (todo == null || writersName == null) {
+                throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "할 일과 작성자명을 적어주세요");
+            }
+        } else {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "비밀번호가 틀렸습니다.");
+        }
+
+        schedule.update(todo, writersName, LocalDateTime.now());
+
+        return new ScheduleResponseDto(schedule);
+    }
+
+    @Override
+    public void deleteSchedule(Long id, String password) {
+
+        Schedule schedule = scheduleRepository.findScheduleById(id);
+
+        if (schedule == null) {
+
+            if (schedule == null) {
+                throw new ResponseStatusException(HttpStatus.NOT_FOUND, "존재하지 않는 id = " + id);
+            }
+        } else {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "비밀번호가 틀렸습니다.");
+        }
+
+    }
+
+
 }
