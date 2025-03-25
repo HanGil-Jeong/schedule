@@ -1,5 +1,6 @@
 package com.example.schedule.dto;
 
+import com.example.schedule.entity.Schedule;
 import lombok.Getter;
 
 import java.time.LocalDateTime;
@@ -12,4 +13,13 @@ public class ScheduleResponseDto {
     private String writersName;
     private LocalDateTime writtenDate;
 
+    public ScheduleResponseDto(Schedule schedule){
+        this.id = schedule.getId();
+        this.todo = schedule.getTodo();
+        this.writersName = schedule.getWritersName();
+        this.writtenDate = schedule.getWrittenDate();
+    }
+
 }
+
+
