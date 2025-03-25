@@ -13,5 +13,5 @@ public interface ScheduleRepository {
 
     Schedule findScheduleById(Long id);
 
-
+    void deleteSchedule(Long id);
 }
