@@ -50,7 +50,7 @@ public class ScheduleController {
             @PathVariable Long id, String password
     ){
 
-        scheduleService.deleteSchedule(id, password);
+        scheduleService.deleteSchedule(id);
 
         return new ResponseEntity<>(HttpStatus.OK);
     }
