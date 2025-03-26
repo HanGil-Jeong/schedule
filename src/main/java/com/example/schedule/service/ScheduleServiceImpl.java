@@ -52,7 +52,7 @@ public class ScheduleServiceImpl implements ScheduleService {
     }
 
     @Override
-    public ScheduleResponseDto updateSchedule(Long id, String password, String todo, String writersName) {
+    public ScheduleResponseDto updateSchedule(Long id, String todo, String writersName) {
 
         Schedule schedule = scheduleRepository.findScheduleById(id);
 
@@ -71,14 +71,13 @@ public class ScheduleServiceImpl implements ScheduleService {
 
     @Override
     public void deleteSchedule(Long id) {
-
         Schedule schedule = scheduleRepository.findScheduleById(id);
-
 
         if (schedule == null) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "존재하지 않는 id = " + id);
         }
 
+        scheduleRepository.deleteSchedule(id);
 
     }
 

@@ -42,17 +42,14 @@ public class ScheduleController {
             @PathVariable Long id,
             @RequestBody ScheduleRequestDto dto
             ){
-        return new ResponseEntity<>(scheduleService.updateSchedule(id, dto.getPassword(), dto.getTodo(), dto.getWritersName()), HttpStatus.OK);
+        return new ResponseEntity<>(scheduleService.updateSchedule(id, dto.getTodo(), dto.getWritersName()), HttpStatus.OK);
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteSchedule(
-            @PathVariable Long id, String password
-    ){
-
+   @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteSchedule(@PathVariable Long id) {
         scheduleService.deleteSchedule(id);
 
         return new ResponseEntity<>(HttpStatus.OK);
-    }
+   }
 
 }

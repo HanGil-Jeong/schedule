@@ -43,8 +43,8 @@ public class ScheduleRepositoryImpl implements ScheduleRepository {
 
     @Override
     public void deleteSchedule(Long id) {
-
         scheduleList.remove(id);
-
     }
+
+
 }
